@@ -1,0 +1,37 @@
+{
+    "places": [
+        {
+            "name": "Phipps Conservatory and Botanical Gardens",
+            "lat": 40.439101,
+            "long": -79.947510,
+            "addr": "1 Schenley Drive, Pittsburgh, PA 15213",
+            "reviews": [],
+            "comprating": null,
+            "ratings": 0,
+            "slug": "phipps",
+            "crc32": 1891683083
+        },
+        {
+            "name": "Grandview Overlook",
+            "lat": 40.434515,
+            "long": -80.011299,
+            "addr": "136-160 Grandview Ave, Pittsburgh, PA 15211",
+            "reviews": [],
+            "comprating": null,
+            "ratings": 0,
+            "slug": "mtwashington",
+            "crc32": 2541251263
+        },
+        {
+            "name": "Fort Pitt Museum",
+            "lat": 40.440876,
+            "long": -80.009612,
+            "addr": "Point State Park, 601 Commonwealth Pl, Pittsburgh, PA 15222",
+            "reviews": [],
+            "comprating": null,
+            "ratings": 0,
+            "slug": "fortpitt",
+            "crc32": 621989476
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+* {
+    font-family: Cantarell, Ubuntu, "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+
+.header {
+    text-align: center;
+}
+
+.listblock {
+    /*text-align: center;*/
+    margin-left: 40px;
+    padding-left: 20px;
+}
+
+.listblock {
+    margin: 8px 0;
+}
+
+.h2 {
+    /*text-align: center;*/
+    margin-left: 40px;
+    padding-left: 20px;
+}
+
+*.content {
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    /* Hide popups by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.placecard {
+    display: none;
+}
+
+.close {
+    display: block;
+}
