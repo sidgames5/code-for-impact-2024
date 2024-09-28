@@ -21,6 +21,8 @@ fetch('/api/places', {
                 var description = document.getElementById("description");
 
                 name.innerHTML = place.name;
+                image.setAttribute("src", place.imageURL);
+                description.innerHTML = place.description;
             }
         });
     })

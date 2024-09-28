@@ -2,6 +2,7 @@
     "places": [
         {
             "name": "Phipps Conservatory and Botanical Gardens",
+            "description": "Phipps Conservatory and Botanical Gardens is a botanical garden set in Schenley Park, Pittsburgh, Pennsylvania, United States. It is a City of Pittsburgh historic landmark and is listed on the National Register of Historic Places.",
             "lat": 40.439101,
             "long": -79.947510,
             "addr": "1 Schenley Drive, Pittsburgh, PA 15213",
@@ -9,10 +10,12 @@
             "comprating": null,
             "ratings": 0,
             "slug": "phipps",
+            "imageURL": "https://www.phipps.conservatory.org/images/made/assets/images/as_blog_image/2010s_recap_cover_photo_1494_780_s_c1.jpg",
             "crc32": 1891683083
         },
         {
             "name": "Grandview Overlook",
+            "description": "",
             "lat": 40.434515,
             "long": -80.011299,
             "addr": "136-160 Grandview Ave, Pittsburgh, PA 15211",
@@ -20,10 +23,12 @@
             "comprating": null,
             "ratings": 0,
             "slug": "mtwashington",
+            "imageURL": "https://lewisandclark.s3.amazonaws.com/wp-content/uploads/2021/02/19140143/this-overlook-on-my-washington-e1674136902885.jpg",
             "crc32": 2541251263
         },
         {
             "name": "Fort Pitt Museum",
+            "description": "Fort Pitt Museum is an indoor/outdoor museum that is administered by the Senator John Heinz History Center in downtown Pittsburgh, Allegheny County, Pennsylvania in the United States. It is at the confluence of the Monongahela and Allegheny Rivers, where the Ohio River is formed. Fort Pitt Museum is surrounded by Point State Park, a Pennsylvania state park named for the geographically and historically significant point that is between the rivers. This piece of land was key to controlling the upper reaches of the Ohio River Valley and western Pennsylvania, before, during and after the French and Indian War as well as the American Revolution. The museum is in a recreated bastion of Fort Pitt, which was originally built in 1758 by the British. An outline of Fort Duquesne is nearby. The historical focus of the museum is the role that Fort Pitt played during the French and Indian War. The museum also features detailed information on Fort Pitt's role during the American Revolution, the Whiskey Rebellion and the founding of Pittsburgh. The museum was established and operated by the Pennsylvania Historical and Museum Commission until its closure in August 2009 from state budget cuts. The Heinz Center took over the operation of the museum and reopened it in April 2010.",
             "lat": 40.440876,
             "long": -80.009612,
             "addr": "Point State Park, 601 Commonwealth Pl, Pittsburgh, PA 15222",
@@ -31,6 +36,7 @@
             "comprating": null,
             "ratings": 0,
             "slug": "fortpitt",
+            "imageURL": "https://lewisandclark.s3.amazonaws.com/wp-content/uploads/2021/03/19132148/image-1-e1674134508170.jpeg",
             "crc32": 621989476
         }
     ]
