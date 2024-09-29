@@ -1,4 +1,4 @@
-function genRevHtml(author, rating, text) {
+function genRevHtml(author, rating, text, ts) {
     var stars = '';
     for (let i = 0; i < rating; i++) {
         stars += '<i class="fa-solid fa-star"></i>';
@@ -6,7 +6,7 @@ function genRevHtml(author, rating, text) {
     while (stars.length < 32 * 5) {
         stars += '<i class="fa-regular fa-star"></i>';
     }
-    return `<li>${stars} ${text} - ${author} <small>Submitted on </small></li><br>`;
+    return `<li>${stars} ${text} - ${author} <small>Submitted on ${ts}</small></li><br>`;
 }
 
 function isInIframe() {
@@ -20,11 +20,25 @@ function isInIframe() {
 var placeid = 0;
 
 document.getElementById("reviewb").onclick = () => {
-    const text = prompt("Enter your review");
+    while (true) {
+        var text = prompt("Enter your review");
+        if (text != "") {
+            break;
+        } else {
+            alert("Please provide a valid review!")
+        }
+    }
     if (text == null) return;
-    const review = prompt("Enter your rating from 0 to 5");
+    while (true) {
+        var review = prompt("Enter your rating from 0 to 5");
+        if (["0", "1", "2", "3", "4", "5"].includes(review)) {
+            break;
+        } else {
+            alert("Please provide a valid rating from 0 to 5!")
+        }
+    }
     if (review == null) return;
-    const author = prompt("Enter your name");
+    const author = prompt("Enter your name (Blank for anonymous)");
 
     fetch('/api/writereview', {
         method: 'POST',
@@ -81,13 +95,18 @@ fetch('/api/places', {
                 var description = document.getElementById("description");
 
                 name.innerHTML = place.name;
+                document.title = place.name + " - Spotlight Explorer";
                 image.setAttribute("src", place.imageURL);
                 description.innerHTML = place.description;
 
                 var list = document.getElementById("revslist");
                 place.reviews.forEach(review => {
-                    list.innerHTML += genRevHtml(review.name, review.rating, review.review);
+                    var dt = new Date(review.timestamp * 1000)
+                    list.innerHTML += genRevHtml(review.name, review.rating, review.review, dt.toLocaleDateString());
                 });
+                if (place.reviews.length < 1) {
+                    list.innerHTML += "<li>No reviews yet</li>";
+                }
 
             }
         });

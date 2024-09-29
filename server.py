@@ -1,8 +1,9 @@
 from flask import Flask, request, send_from_directory
 import json
 import os
-import zlib as zl
+#import zlib as zl
 import time as t
+import datetime as dt
 
 datafolder = "./data"
 places = os.path.join(datafolder, "places.json")
@@ -34,6 +35,7 @@ def places_endpoint():
 @app.route("/api/writereview", methods=["POST"])
 def write_endpoint():
     data = request.json
+    success = True
     name = data["name"]
     rating = data["rating"]
     review = data["review"]
@@ -41,6 +43,8 @@ def write_endpoint():
     picture = ""
     placeHash = data["place"]
     realplace = 0
+    if review == "":
+        return {"accepted": False}
     if name in ["", None]:
         name = "Anonymous"
     pl = None
@@ -63,7 +67,7 @@ def write_endpoint():
     )
     with open(places, "w") as f:
         f.write(json.dumps(pl))
-    return pl["places"]
+    return {"accepted": True}
 
 @app.route("/api/getreview", methods=["GET"])
 def getReviews():
@@ -79,6 +83,11 @@ def getReviews():
         if int(placee[i]["crc32"]) == placeHash:
             realplace = i
             break
+    for rv in range(len(placee[realplace]["reviews"])):
+        newtime = placee[realplace]["reviews"][rv]["timestamp"]
+        newtime = dt.datetime.fromtimestamp(newtime)
+        newtime = newtime.strftime("%B %-d, %Y")
+        placee[realplace]["reviews"][rv] = newtime
     return placee[realplace]["reviews"]
 
 if __name__ == "__main__":
