@@ -9,7 +9,7 @@ function addMarker(lat, lon, popupContent) {
         .bindPopup(popupContent);
 }
 
-fetch('http://ip-api.com/json', {
+fetch('https://ipapi.co/json', {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json',
@@ -17,8 +17,8 @@ fetch('http://ip-api.com/json', {
 })
     .then(response => response.text())
     .then(data => {
-        var lat = JSON.parse(data).lat;
-        var lon = JSON.parse(data).lon;
+        var lat = JSON.parse(data).latitude;
+        var lon = JSON.parse(data).longitude;
         map.setView([lat, lon], 10);
     })
     .catch(error => {

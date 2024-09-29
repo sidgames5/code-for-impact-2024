@@ -32,7 +32,7 @@ fetch('/api/places', {
 })
     .then(response => response.text())
     .then(data => {
-        fetch('http://ip-api.com/json', {
+        fetch('https://ipapi.co/json', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,8 +43,8 @@ fetch('/api/places', {
                 JSON.parse(data).forEach(place => {
                     let c = 0;
                     var list = document.getElementById("near-you");
-                    var lat = JSON.parse(d).lat;
-                    var lon = JSON.parse(d).lon;
+                    var lat = JSON.parse(d).latitude;
+                    var lon = JSON.parse(d).longitude;
                     if (isWithin100Miles(lat, lon, place.lat, place.long)) {
                         c++;
                         if (c == 10) return;
