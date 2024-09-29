@@ -46,9 +46,9 @@ def write_endpoint():
     pl = None
     with open(places, "r") as f:
         pl = json.loads(f.read())
-    places = pl["places"]
-    for i in range(len(places)):
-        if places[i]["crc32"] == placeHash:
+    placee = pl["places"]
+    for i in range(len(placee)):
+        if placee[i]["crc32"] == placeHash:
             realplace = i
             break
 
@@ -64,6 +64,22 @@ def write_endpoint():
     with open(places, "w") as f:
         f.write(json.dumps(pl))
     return pl["places"]
+
+@app.route("/api/getreview", methods=["GET"])
+def getReviews():
+    placeHash = request.args.get("place")
+    with open(places, "r") as f:
+        pl = json.loads(f.read())
+    placee = pl["places"]
+    
+    print(placee)
+    realplace = 0
+    
+    for i in range(len(placee)):
+        if int(placee[i]["crc32"]) == placeHash:
+            realplace = i
+            break
+    return placee[realplace]["reviews"]
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)

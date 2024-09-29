@@ -1,4 +1,41 @@
 #image {
-    width: 50vw;
+    margin: 4px;
+    display: flex;
+    text-align: left;
+    height: 250px;
+}
+
+.eeee {
+    float: left;
+}
+
+#reviews {
+    display: flex;
+    /* height: 100%; */
+    /* border: 5px solid; */
+    height: 250px;
+}
+
+#reviewb {
     height: auto;
+    display: flex;
+}
+
+ul {
+    float: right;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    width: 100%;
+}
+
+#description {
+    clear: left;
+}
+
+#revslist {
+    display: block;
+    overflow: scroll;
 }

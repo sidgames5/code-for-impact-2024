@@ -1,0 +1,12 @@
+.background_image {
+    background-size: cover;
+}
+
+a,
+ul,
+li,
+h1,
+h2,
+p {
+    color: white;
+}

@@ -6,16 +6,31 @@
             "lat": 40.439101,
             "long": -79.947510,
             "addr": "1 Schenley Drive, Pittsburgh, PA 15213",
-            "reviews": [],
-            "comprating": null,
-            "ratings": 0,
+            "reviews": [
+                {
+                    "name": "bobby joe",
+                    "rating": 4,
+                    "review": "10/10, would go here again",
+                    "timestamp": 1727545276,
+                    "picture": ""
+                },
+                {
+                    "name": "bobby joe",
+                    "rating": 4,
+                    "review": "10/10, would go here again. blah blah blah blah blah",
+                    "timestamp": 1727545276,
+                    "picture": ""
+                }
+            ],
+            "ratings": 10,
             "slug": "phipps",
             "imageURL": "https://www.phipps.conservatory.org/images/made/assets/images/as_blog_image/2010s_recap_cover_photo_1494_780_s_c1.jpg",
-            "crc32": 1891683083
+            "crc32": 1891683083,
+            "comprating": 4
         },
         {
-            "name": "Grandview Overlook",
-            "description": "",
+            "name": "Mount Washington",
+            "description": "In the early history of Pittsburgh, Mount Washington was known as Coal Hill, but Coal Hill was actually on the south bank of the Monongahela River. Easy access to the Pittsburgh coal seam's outcrop near the base of Mount Washington allowed several mines to operate there. Also, rock was quarried from the hill. Gray sandstone, for example, was quarried at Coal Hill for the second Allegheny County Courthouse. By 1876, the name had been changed to Mount Washington, and a year later, the view of the City of Pittsburgh was first drawn from Mount Washington. Many photos of the Pittsburgh skyline are from Mount Washington, due to the elevation of the hill overlooking the river valley and Downtown Pittsburgh below.",
             "lat": 40.434515,
             "long": -80.011299,
             "addr": "136-160 Grandview Ave, Pittsburgh, PA 15211",

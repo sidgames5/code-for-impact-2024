@@ -5,16 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="global.css">
-    <script src="modal.js"></script>
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="container">
-        <button id="close">Close</button>
+        <i class="fa-regular fa-circle-xmark" id="close"></i>
         <h1 id="name">Loading</h1>
-        <img src="" alt="Loading" id="image">
+        <div id="sbs">
+            <div class="eeee">
+                <img src="" alt="Loading" id="image">
+
+            </div>
+
+            <button id="reviewb">Write A Review</button>
+            <div id="reviews">
+                <br>
+                <ul id="revslist"></ul>
+            </div>
+        </div>
         <p id="description">Loading</p>
+        <script src="modal.js"></script>
     </div>
 </body>
 
