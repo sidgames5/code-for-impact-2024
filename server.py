@@ -91,4 +91,4 @@ def getReviews():
     return placee[realplace]["reviews"]
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='10.0.1.152', port=5000, debug=True)
