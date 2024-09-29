@@ -41,7 +41,7 @@ def write_endpoint():
     picture = ""
     placeHash = data["place"]
     realplace = 0
-    if name == "":
+    if name in ["", None]:
         name = "Anonymous"
     pl = None
     with open(places, "r") as f:

@@ -9,7 +9,53 @@ function genRevHtml(author, rating, text) {
     return `<li>${stars} ${text} - ${author} <small>Submitted on </small></li><br>`;
 }
 
-document.getElementById("reviewb").onclick = () => { };
+function isInIframe() {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+var placeid = 0;
+
+document.getElementById("reviewb").onclick = () => {
+    const text = prompt("Enter your review");
+    if (text == null) return;
+    const review = prompt("Enter your rating from 0 to 5");
+    if (review == null) return;
+    const author = prompt("Enter your name");
+
+    fetch('/api/writereview', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            rating: review,
+            review: text,
+            name: author,
+            place: placeid
+        })
+    })
+        .then(response => response.text())
+        .then(data => {
+
+
+            window.location.reload();
+
+        })
+        .catch(error => {
+            alert("There was an error in saving your review: " + error);
+        });
+};
+
+if (!isInIframe()) {
+    // document.getElementById("close").style.display = "none";
+    document.getElementById("close").onclick = function () {
+        window.history.back();
+    }
+}
 
 fetch('/api/places', {
     method: 'GET',
@@ -29,6 +75,7 @@ fetch('/api/places', {
         });
         JSON.parse(data).forEach(place => {
             if (place.crc32 == id) {
+                placeid = place.crc32;
                 var name = document.getElementById("name");
                 var image = document.getElementById("image");
                 var description = document.getElementById("description");
@@ -37,22 +84,11 @@ fetch('/api/places', {
                 image.setAttribute("src", place.imageURL);
                 description.innerHTML = place.description;
 
-                fetch('/api/getreview?place=' + id, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                })
-                    .then(response => response.text())
-                    .then(reviews => {
-                        var list = document.getElementById("revslist");
-                        JSON.parse(reviews).forEach(review => {
-                            list.innerHTML += genRevHtml(review.name, review.rating, review.review);
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
+                var list = document.getElementById("revslist");
+                place.reviews.forEach(review => {
+                    list.innerHTML += genRevHtml(review.name, review.rating, review.review);
+                });
+
             }
         });
     })

@@ -1,0 +1,15 @@
+a,
+ul,
+li,
+h1,
+h2,
+h3,
+div,
+p {
+    color: White;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 10px;
+}

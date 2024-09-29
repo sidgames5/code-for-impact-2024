@@ -9,7 +9,21 @@ function addMarker(lat, lon, popupContent) {
         .bindPopup(popupContent);
 }
 
-map.setView([40.521207, -79.858481], 5);
+fetch('http://ip-api.com/json', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    }
+})
+    .then(response => response.text())
+    .then(data => {
+        var lat = JSON.parse(data).lat;
+        var lon = JSON.parse(data).lon;
+        map.setView([lat, lon], 10);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
 fetch('/api/places', {
     method: 'GET',
